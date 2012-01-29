@@ -1,13 +1,16 @@
-This is a re-implementation of the Elastic Tabstops plugin for GEdit2, which didn't seem to 
-work properly in GEdit3. If the original actually does work with GEdit2, then this is just a 
-port to Python cause that's worthwhile as well.
+This is a re-implementation of the Elastic Tabstops plugin for GEdit2,
+which didn't seem to work properly in GEdit3. If the original actually
+does work with GEdit2, then this is just a port to Python cause that's
+worthwhile as well. The original plugin as well as the original idea
+can be found at http://nickgravgaard.com/elastictabstops/
 
-This is also kind of a "Version Zero". I've spent maybe ten hours on it total, including 
-learning how to write GEdit plugins and slogging through several versions of the GTK 
-documentation. It seems to be working essentially correctly; the basic elastic tabstop 
-behavior is working and seems stable. It hasn't been thoroughly tested, however, and may 
-behave differently than the original in some not-so-obvious ways.
+This is also kind of a "Version Zero". I've spent maybe ten hours on
+it total, including learning how to write GEdit plugins and slogging
+through several versions of the GTK documentation. It seems to be
+working essentially correctly; the basic elastic tabstop behavior is
+working and seems stable. It hasn't been thoroughly tested, however,
+and may behave differently than the original in some ways.
 
-Just wanted to get this out onto ye olde iternet in case anybody else is searching for it; I 
-think elastic tabstops are a great idea, but it's a pain in the ass to find an editor that 
-acutally implements the feature.
+Just wanted to get this out onto ye olde iternet in case anybody else
+is searching for it; I think elastic tabstops are a great idea, but
+it's a pain in the ass to find an editor that acutally implements them.

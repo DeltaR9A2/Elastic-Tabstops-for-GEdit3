@@ -1,0 +1,8 @@
+[Plugin]
+Loader=python
+Module=elastictabstops
+IAge=3
+Name=Elastic Tabstops
+Description=Implementation of elastic tabstops for GEdit3
+Authors=John Colburn <they.called.him.crazy@gmail.com>
+Copyright=Copyright (C) John Colburn 2012, Licensed under GPL3

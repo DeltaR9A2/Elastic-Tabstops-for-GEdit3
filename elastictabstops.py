@@ -7,12 +7,15 @@ MINIMUM_CELL_PADDING = 16
 
 class TabGroup:
 	def __init__(self, first_line):
-		self.first_line = first_line
-		self.line_count = 0
+		self.first_line	= first_line
+		self.line_count	= 0
 
 		self.cell_widths = []
 
 		self.tabs = Pango.TabArray.new(3, True)
+		
+		self.tag = None
+		self.buffer = None
 
 	def add_row_structs(self, *row_structs):
 		for row in row_structs:
@@ -35,13 +38,18 @@ class TabGroup:
 			self.tabs.set_tab(i, Pango.TabAlign.LEFT, tab_offset)
 
 	def apply_to_view(self, view):
-		buffer = view.get_buffer()
-		tag = buffer.create_tag(None, tabs = self.tabs)
+		self.buffer = view.get_buffer()
+
+		self.tag = self.buffer.create_tag(None, tabs = self.tabs)
 		for x in xrange(self.line_count):
-			start_iter = buffer.get_iter_at_line(self.first_line+x)
-			end_iter = start_iter.copy()
+			start_iter	= self.buffer.get_iter_at_line(self.first_line+x)
+			end_iter	= start_iter.copy()
 			end_iter.forward_to_line_end()
-			buffer.apply_tag(tag, start_iter, end_iter)
+			self.buffer.apply_tag(self.tag, start_iter, end_iter)
+
+	def destroy(self):
+		if self.tag is not None and self.buffer is not None:
+			self.buffer.delete_tag(self.tag)
 			
 class CellParser:
 	cell_enders = ("\t", "\0")
